@@ -1,0 +1,28 @@
+#clojure command : user=> (println (.replace (.replace apath "/Users" "cp /Users") ":" " . \n"))
+
+project_name=`pwd`
+#=============del temp dir==========
+rm -rf ./execute
+mkdir execute
+lein clean
+lein jar
+cd execute
+mkdir lib
+cd lib
+#==============cp jar ==============
+lein_classpath=`lein classpath`
+classpath_all=(`echo -e  ${lein_classpath//:/\\\\n}`)
+remove_patter=( ${classpath_all[@]/*$project_name*/} )
+classpath_jars=(`echo -e ${remove_patter[@]}`)
+for t in "${classpath_jars[@]}"
+do
+    cp $t .
+done
+
+cp ../../target/provided/*.jar .
+#==============
+cd ..
+cp ../doc/shell .
+#===================================
+chmod +x shell
+cd ..

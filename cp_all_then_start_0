@@ -1,0 +1,35 @@
+#!/usr/bin/expect
+
+set user huangchunping
+set passwd huangchunping
+set server 192.168.2.231
+set port 22
+set sf_dir  /Users/huang/Project/small-repair/execute
+#set sf small-admin-1.0.0.jar
+set tf /home/huangchunping/execute_temp
+
+
+# 登录并执行命令
+spawn scp -r $sf_dir $user@$server:$tf
+expect "password:"
+send "${passwd}\n"
+set timeout 300
+expect "$ "
+
+spawn ssh $user@$server -p $port
+expect "password:"
+send "${passwd}\n"
+expect "]$ "
+send "cd execute\n"
+expect "]$ "
+send "./shell stop\n"
+expect "]$ "
+send "rm -rf *\n"
+expect "]$ "
+send "cp -rf $tf/execute/. .\n"
+expect "]$ " 
+send "./shell stop\n"
+expect "]$ "
+send "./shell start\n"
+expect "]$ "
+exit

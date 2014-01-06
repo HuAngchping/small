@@ -1,0 +1,73 @@
+#clojure command : user=> (println (.replace (.replace apath "/Users" "cp /Users") ":" " . \n"))
+
+
+#=============del temp dir==========
+rm -rf ./execute
+mkdir execute
+lein jar
+cd execute
+mkdir lib
+cd lib
+#==============cp jar ==============
+cp ~/tools/repository/org/clojure/clojure/1.5.1/clojure-1.5.1.jar .
+cp ~/tools/repository/compojure/compojure/1.1.5/compojure-1.1.5.jar .
+cp ~/tools/repository/org/clojure/core.incubator/0.1.0/core.incubator-0.1.0.jar .
+cp ~/tools/repository/org/clojure/tools.macro/0.1.0/tools.macro-0.1.0.jar .
+cp ~/tools/repository/clout/clout/1.0.1/clout-1.0.1.jar .
+cp ~/tools/repository/ring/ring-core/1.1.7/ring-core-1.1.7.jar .
+cp ~/tools/repository/commons-codec/commons-codec/1.8/commons-codec-1.8.jar .
+cp ~/tools/repository/commons-io/commons-io/2.4/commons-io-2.4.jar .
+cp ~/tools/repository/commons-fileupload/commons-fileupload/1.2.1/commons-fileupload-1.2.1.jar .
+cp ~/tools/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar .
+cp ~/tools/repository/clj-time/clj-time/0.3.7/clj-time-0.3.7.jar .
+cp ~/tools/repository/joda-time/joda-time/2.0/joda-time-2.0.jar .
+cp ~/tools/repository/com/taoensso/carmine/2.1.0/carmine-2.1.0.jar .
+cp ~/tools/repository/commons-pool/commons-pool/1.6/commons-pool-1.6.jar .
+cp ~/tools/repository/org/clojure/data.json/0.2.2/data.json-0.2.2.jar .
+cp ~/tools/repository/expectations/expectations/1.4.49/expectations-1.4.49.jar .
+cp ~/tools/repository/erajure/erajure/0.0.3/erajure-0.0.3.jar .
+cp ~/tools/repository/org/mockito/mockito-all/1.8.0/mockito-all-1.8.0.jar .
+cp ~/tools/repository/junit/junit/4.8.1/junit-4.8.1.jar .
+cp ~/tools/repository/com/taoensso/timbre/2.4.1/timbre-2.4.1.jar .
+cp ~/tools/repository/clj-stacktrace/clj-stacktrace/0.2.6/clj-stacktrace-0.2.6.jar .
+cp ~/tools/repository/com/taoensso/nippy/2.0.0/nippy-2.0.0.jar .
+cp ~/tools/repository/org/iq80/snappy/snappy/0.3/snappy-0.3.jar .
+cp ~/tools/repository/ring/ring-json/0.2.0/ring-json-0.2.0.jar .
+cp ~/tools/repository/cheshire/cheshire/5.0.2/cheshire-5.0.2.jar .
+cp ~/tools/repository/com/fasterxml/jackson/core/jackson-core/2.1.3/jackson-core-2.1.3.jar .
+cp ~/tools/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.1.2/jackson-dataformat-smile-2.1.2.jar .
+cp ~/tools/repository/org/clojure/tools.logging/0.2.6/tools.logging-0.2.6.jar .
+cp ~/tools/repository/ring/ring-jetty-adapter/1.1.6/ring-jetty-adapter-1.1.6.jar .
+cp ~/tools/repository/ring/ring-servlet/1.1.6/ring-servlet-1.1.6.jar .
+cp ~/tools/repository/org/eclipse/jetty/jetty-server/7.6.1.v20120215/jetty-server-7.6.1.v20120215.jar .
+cp ~/tools/repository/org/eclipse/jetty/orbit/javax.servlet/2.5.0.v201103041518/javax.servlet-2.5.0.v201103041518.jar .
+cp ~/tools/repository/org/eclipse/jetty/jetty-continuation/7.6.1.v20120215/jetty-continuation-7.6.1.v20120215.jar .
+cp ~/tools/repository/org/eclipse/jetty/jetty-http/7.6.1.v20120215/jetty-http-7.6.1.v20120215.jar .
+cp ~/tools/repository/org/eclipse/jetty/jetty-io/7.6.1.v20120215/jetty-io-7.6.1.v20120215.jar .
+cp ~/tools/repository/org/eclipse/jetty/jetty-util/7.6.1.v20120215/jetty-util-7.6.1.v20120215.jar .
+cp ~/tools/repository/lq/lucene-queryparser/4.2.0/lucene-queryparser-4.2.0.jar .
+cp ~/tools/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar .
+cp ~/tools/repository/korma/korma/0.3.0-RC4/korma-0.3.0-RC4.jar .
+cp ~/tools/repository/c3p0/c3p0/0.9.1.2/c3p0-0.9.1.2.jar .
+cp ~/tools/repository/org/clojure/java.jdbc/0.2.2/java.jdbc-0.2.2.jar .
+cp ~/tools/repository/IK/IK/2012/IK-2012.jar .
+cp ~/tools/repository/org/apache/lucene/lucene-core/4.0.0/lucene-core-4.0.0.jar .
+cp ~/tools/repository/org/clojars/kbarber/postgresql/9.2-1002.jdbc4/postgresql-9.2-1002.jdbc4.jar .
+cp ~/tools/repository/clj-http/clj-http/0.7.6/clj-http-0.7.6.jar .
+cp ~/tools/repository/org/apache/httpcomponents/httpcore/4.2.4/httpcore-4.2.4.jar .
+cp ~/tools/repository/org/apache/httpcomponents/httpclient/4.2.5/httpclient-4.2.5.jar .
+cp ~/tools/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar .
+cp ~/tools/repository/org/apache/httpcomponents/httpmime/4.2.5/httpmime-4.2.5.jar .
+cp ~/tools/repository/slingshot/slingshot/0.10.3/slingshot-0.10.3.jar .
+cp ~/tools/repository/crouton/crouton/0.1.1/crouton-0.1.1.jar .
+cp ~/tools/repository/org/jsoup/jsoup/1.7.1/jsoup-1.7.1.jar .
+cp ~/tools/repository/org/clojure/tools.reader/0.7.4/tools.reader-0.7.4.jar .
+cp ~/tools/repository/ring-mock/ring-mock/0.1.5/ring-mock-0.1.5.jar .
+cp ~/tools/repository/ring/ring-codec/1.0.0/ring-codec-1.0.0.jar .
+cp ../../target/provided/small-repair-0.1.0.jar .
+#==============
+cd ..
+cp ../doc/shell .
+#===================================
+chmod +x shell
+cd ..
